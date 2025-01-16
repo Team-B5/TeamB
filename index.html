@@ -3,103 +3,534 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meet Team B</title>
-
-    <link rel="stylesheet" href="index.css">
+    <title>Team B - NTT Data</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0066cc;
+            --secondary-color: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .navbar {
+            background: linear-gradient(to right, #0066cc, #0099ff);
+            padding: 1rem;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            color: white !important;
+        }
+
+        .nav-link {
+            color: white !important;
+            margin: 0 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-link:hover {
+            transform: translateY(-2px);
+        }
+
+        #hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+
+        .team-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .team-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 1.5rem auto;
+            object-fit: cover;
+            border: 5px solid var(--primary-color);
+        }
+
+        .project-card {
+            border: none;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-links a {
+            margin: 0 10px;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .project-links a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: linear-gradient(to right, #0066cc, #0099ff);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .section-padding {
+            padding: 5rem 0;
+        }
+
+        .about-section {
+            background-color: var(--secondary-color);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+Dark Themed Team Website
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team B - NTT Data</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #7c4dff;
+            --secondary-color: #303030;
+            --accent-color: #00e5ff;
+            --text-color: #e0e0e0;
+            --card-bg: #424242;
+            --hover-color: #9575cd;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #212121;
+            color: var(--text-color);
+        }
+
+        .navbar {
+            background: linear-gradient(to right, #7c4dff, #00e5ff);
+            padding: 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            color: white !important;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-link {
+            color: white !important;
+            margin: 0 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            transform: translateY(-2px);
+            color: var(--accent-color) !important;
+        }
+
+        #hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/api/placeholder/1920/1080');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 150px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(124, 77, 255, 0.3), rgba(0, 229, 255, 0.3));
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+
+        .team-card {
+            background-color: var(--card-bg);
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+            color: var(--text-color);
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(124, 77, 255, 0.2);
+            background-color: #484848;
+        }
+
+        .team-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 1.5rem auto;
+            object-fit: cover;
+            border: 5px solid var(--primary-color);
+            box-shadow: 0 0 20px rgba(124, 77, 255, 0.3);
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border: none;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            color: var(--text-color);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(124, 77, 255, 0.2);
+            background-color: #484848;
+        }
+
+        .project-links a {
+            margin: 0 10px;
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .project-links a:hover {
+            color: var(--hover-color);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: linear-gradient(to right, #7c4dff, #00e5ff);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-padding {
+            padding: 5rem 0;
+        }
+
+        .about-section {
+            background-color: var(--secondary-color);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 1.8;
+            color: var(--text-color);
+        }
+
+        .card-title {
+            color: var(--accent-color);
+        }
+
+        /* Adding some subtle animations */
+        @keyframes gradient {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
+        .section-title, .card-title {
+            transition: color 0.3s ease;
+        }
+
+        .section-title:hover, .card-title:hover {
+            color: var(--primary-color);
+        }
+    </style>
 </head>
 <body>
-    <nav>
-        <a href="#about">About Us</a>
-        <a href="#team">Meet the Team</a>
-        <a href="#projects">Projects</a>
-    </nav>
-    <!-- <hr /> -->
-    <div id="about">
-        We are a team of 5 people at Ntt Data, learning and working together, helping each other to make better products.
-        This website is the collection of all the team work that we did in our training.
-        <p>And yes, we are still learning and getting better day by day, so if there are any improvements or feedbacks do share with us. You can reach out to us on Teams.</p>
-    </div>
-    <div id="team">
-        <h2>The Team</h2>
-        <div class="team-member">
-            <img src="./assets/mansi.jpg" alt="Mansi Jain" class="profile-image">
-            <p>Meet Mansi, she holds a post graduate degree in Master of Computer Application and loves to work on new technology. Always up for learning.</p>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Team B</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#team">Team</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">Projects</a>
+                </li>
+            </ul>
         </div>
-        <div>
-        <img src="./assets/Ajinkiya.jpg" alt="Ajinkiya Dongare" class="profile-image">
-        <p>Meet Ajinkya Dongare, a little curious and always upbeat! A post graduate in Innovation Design, she's recently been diving into frontend technologies. With a sharp attention to detail, Ajinkya is committed to creating seamless user experience.</p>
     </div>
-    <div class="team-member">
+</nav>
 
-        <img src="./assets/Roja.jpg" alt="Sidral Roja" class="profile-image">
-        <p>Meet Sidral Roja, a recent graduate with a  foundation in AI and Data Science. With a keenness to learn and a drive to succeed, is poised to make a significant impact in the field.</p>
+<!-- Hero Section -->
+<section id="hero">
+    <div class="container">
+        <h1 class="display-4 mb-4">Welcome to Team B</h1>
+        <p class="lead">Innovating together at NTT Data</p>
     </div>
-    <div class="team-member">
-        <img src="./assets/Srikanth.jpg" alt="Srikanth Thella" class="profile-image">
-        <p>Say hello to Srikanth, an IIT graduate with a passion for data science, a love for lifelong learning, and a drive to explore limitless possibilities.
-        </p>
+</section>
+
+<!-- About Section -->
+<section id="about" class="section-padding about-section">
+    <div class="container">
+        <h2 class="section-title">About Us</h2>
+        <div class="about-content">
+            <p class="lead">We are a team of 5 passionate individuals at NTT Data, learning and working together to create innovative solutions. Our diverse skills and collaborative spirit drive us to build better products every day.</p>
+            <p>This website showcases our journey and the projects we've developed during our training. We believe in continuous improvement and welcome your feedback - feel free to reach out to us on Teams!</p>
+        </div>
     </div>
-    <div class="team-member">
-        <img src="./assets/Swathi.jpg" alt="Swathi Dr" class="profile-image">
-        <p>Meet Swathi D R, a graduate in AI&ML. Motivated self-starter with a relentless drive for success.</p>
-    </div>
-    </div>
-    <div id="projects">
-        <h2>Projects</h2>
-        <p>We were assigned a Air Quality Prediction task and were asked to build it end-to-end. Here, presenting our work where we explored different backend and frontend technologies, experimented with various deployment platforms and work approaches. It was indeed a wonderful learning experience. Majorly we chose API approach and the traditional bundling of frontend and backend together approach to present our product.</p>
-        <ul class="project-list">
-            <h2>The Traditional one</h2>
-            <li>
-                <div>
-                    
-                    <p>The Flask backend to deploy our classification model and handle API requests to make predictions. The deployment has been done on Render platform.</p>
-                    <p>Github Code link - <a href="https://github.com/srikanththella/AirQualityPrediction">Flask project code files</a></p>
-                    <p>Deployment link - <a href="https://airqualityprediction-jhnj.onrender.com">Flask code deployment link</a></p>
+</section>
+
+<!-- Team Section -->
+<section id="team" class="section-padding">
+    <div class="container">
+        <h2 class="section-title">Meet Our Team</h2>
+        <div class="row">
+            <!-- Team Member Cards -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card team-card text-center">
+                    <img src="./assets/mansi.jpg" alt="Mansi Jain" class="team-img">
+                    <div class="card-body">
+                        <h5 class="card-title">Mansi Jain</h5>
+                        <p class="card-text">MCA postgraduate with a passion for new technologies. Always eager to learn and explore innovative solutions.</p>
+                    </div>
                 </div>
-            </li>
+            </div>
 
-            <h2>The API approach</h2>
-            <li>
-                <div>
-                    
-                    <p>The FastAPI backend to deploy our classification model and handle API requests to make predictions. The deployment has been done on Render platform.</p>
-                    <p>Github Code link - <a href="https://github.com/Team-B5/ML-backend">FastAPI backend code files</a></p>
-                    <p>Deployment link - <a href="https://ml-backend-7w6i.onrender.com">FastAPI code deployment link</a></p>
+            <div class="col-lg-4 col-md-6">
+                <div class="card team-card text-center">
+                    <img src="./assets/Ajinkiya.jpg" alt="Ajinkiya Dongare" class="team-img">
+                    <div class="card-body">
+                        <h5 class="card-title">Ajinkiya Dongare</h5>
+                        <p class="card-text">Innovation Design postgraduate with a keen eye for detail. Specializes in creating seamless user experiences.</p>
+                    </div>
                 </div>
-            </li>
+            </div>
 
-            <li>
-                <div>
-                    <p>Coming to frontend our natural choice was the fundamental technologies i.e HTML, CSS, JS and Bootstrap. The deployment has been done on GitHub Pages.</p>
-                    <p>Github Code link - <a href="https://github.com/Team-B5/ML-frontend">Frontend 1.0 code files</a></p>
-                    <p>Deployment link - <a href="https://team-b5.github.io/ML-frontend/">Frontend 1.0 code deployment link</a></p>
+            <div class="col-lg-4 col-md-6">
+                <div class="card team-card text-center">
+                    <img src="./assets/Roja.jpg" alt="Sidral Roja" class="team-img">
+                    <div class="card-body">
+                        <h5 class="card-title">Sidral Roja</h5>
+                        <p class="card-text">Recent graduate with expertise in AI and Data Science. Driven to make a significant impact in the field.</p>
+                    </div>
                 </div>
-            </li>
+            </div>
 
-            <li>
-                <div>
-                    
-                    <p>Now to test out another deployment platform and improve UI to make it top notch, we created these files. The deployment has been done on Netlify. PS: The deployment link is funny, netlify chose not us. Hahahaha!</p>
-                    <p>Github Code link - <a href="https://github.com/Team-B5/frontend2.0">Frontend 2.0 code files</a></p>
-                    <p>Deployment link - <a href="https://polite-panda-d4be0c.netlify.app/">Frontend 2.0 code deployment link</a></p>
+            <div class="col-lg-4 col-md-6">
+                <div class="card team-card text-center">
+                    <img src="./assets/Srikanth.jpg" alt="Srikanth Thella" class="team-img">
+                    <div class="card-body">
+                        <h5 class="card-title">Srikanth Thella</h5>
+                        <p class="card-text">IIT graduate passionate about data science and lifelong learning. Explorer of limitless possibilities.</p>
+                    </div>
                 </div>
-            </li>
+            </div>
 
-            <li>
-                <div>
-                    <p>How can ReactJS be left behind when we talk about frontend, right? So, here is our react code and its deployment. The deployment has been done on Vercel.</p>
-                    <p>Github Code link - <a href="https://github.com/Team-B5/React-frontend">React Frontend code files</a></p>
-                    <p>Deployment link - <a href="https://react-frontend-pi-nine.vercel.app/">React Frontend code deployment link</a></p>
+            <div class="col-lg-4 col-md-6">
+                <div class="card team-card text-center">
+                    <img src="./assets/Swathi.jpg" alt="Swathi Dr" class="team-img">
+                    <div class="card-body">
+                        <h5 class="card-title">Swathi D R</h5>
+                        <p class="card-text">AI&ML graduate with a self-starting attitude and relentless drive for success.</p>
+                    </div>
                 </div>
-            </li>
-        </ul>
+            </div>
+        </div>
     </div>
+</section>
 
-    <hr />
+<!-- Projects Section -->
+<section id="projects" class="section-padding bg-light">
+    <div class="container">
+        <h2 class="section-title">Our Projects</h2>
+        <div class="row">
+            <div class="col-12 mb-4">
+                <div class="card project-card">
+                    <div class="card-body">
+                        <h4 class="card-title">Air Quality Prediction System</h4>
+                        <p class="card-text">An end-to-end solution for predicting air quality using various technologies and deployment approaches. Our team explored different backend and frontend technologies, experimenting with various deployment platforms.</p>
+                    </div>
+                </div>
+            </div>
 
-    <footer>Made By Team B with <i class="fa-solid fa-heart" style="color:red;"></i> at NTT Data
-    </footer>
-    <hr />
+            <!-- Project Cards -->
+            <div class="col-md-6">
+                <div class="card project-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Traditional Approach</h5>
+                        <p class="card-text">Flask backend deployment with integrated frontend, hosted on Render platform.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/srikanththella/AirQualityPrediction" target="_blank">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                            <a href="https://airqualityprediction-jhnj.onrender.com" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card project-card">
+                    <div class="card-body">
+                        <h5 class="card-title">API Approach</h5>
+                        <p class="card-text">FastAPI backend for model deployment and prediction handling.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/Team-B5/ML-backend" target="_blank">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                            <a href="https://ml-backend-7w6i.onrender.com" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card project-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Frontend 1.0</h5>
+                        <p class="card-text">Built with HTML, CSS, JS, and Bootstrap, deployed on GitHub Pages.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/Team-B5/ML-frontend" target="_blank">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                            <a href="https://team-b5.github.io/ML-frontend/" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card project-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Frontend 2.0</h5>
+                        <p class="card-text">Enhanced UI version deployed on Netlify with improved features.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/Team-B5/frontend2.0" target="_blank">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                            <a href="https://polite-panda-d4be0c.netlify.app/" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card project-card">
+                    <div class="card-body">
+                        <h5 class="card-title">React Frontend</h5>
+                        <p class="card-text">Modern React-based implementation deployed on Vercel.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/Team-B5/React-frontend" target="_blank">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                            <a href="https://react-frontend-pi-nine.vercel.app/" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <p class="mb-0">Made By Team B with <i class="fa-solid fa-heart" style="color: #ff4d4d;"></i> at NTT Data</p>
+    </div>
+</footer>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
