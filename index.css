@@ -1,0 +1,27 @@
+nav{
+    display:flex;
+    justify-content: space-evenly;
+    margin:10px;
+    padding:20px;
+    border: 2px solid black;
+}
+.profile-image{
+    border-radius: 50%;
+    height:68px;
+    width:65px;
+    border-width: 5px solid;
+    border-color: bisque;
+}
+
+.team-member{
+    display: flex;
+}
+
+.project-list{
+    list-style-type: circle;
+}
+
+footer{
+    text-align: center;
+    padding:5px;
+}
